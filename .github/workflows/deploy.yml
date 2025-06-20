@@ -18,11 +18,11 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install Jupyter Book only
+      - name: Install dependencies
         run: |
-          pip install jupyter-book
+          pip install jupyter-book ipython matplotlib numpy pandas plotly seaborn geopandas
 
-      - name: Build the book
+      - name: Build Jupyter Book
         run: |
           jupyter-book build .
 
