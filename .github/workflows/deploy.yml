@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write  # ✅ dit geeft push-rechten aan de bot
+  contents: write
 
 jobs:
   build:
@@ -18,11 +18,11 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
+      - name: Install Jupyter Book only
         run: |
-          pip install -r requirements.txt
+          pip install jupyter-book
 
-      - name: Build the Jupyter Book
+      - name: Build the book
         run: |
           jupyter-book build .
 
